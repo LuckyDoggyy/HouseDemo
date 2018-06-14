@@ -63,7 +63,8 @@ class BrokerController extends Controller
     public function logout()
     {
         session()->flush();
-        return view('origin');
+        header('Location:/login');
+        exit();
     }
 
     public function __destruct()

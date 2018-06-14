@@ -44,7 +44,7 @@ class HouseController extends Controller
 
     public function index(){
         $houseInfos = House::with(['broker','housetype','housedesc']) ->
-        where('broker_id', session() -> get('userId')) -> limit(20) -> get();
+        where('broker_id', session() -> get(    'userId')) -> limit(20) -> get();
         return view('homepage', ['username' => session() -> get('username'), 'houseInfos' => $houseInfos]);
 
     }
@@ -52,7 +52,6 @@ class HouseController extends Controller
     public function show($id){
         $houseInfo = House::with('broker', 'housetype', 'housedesc') -> where(['broker_id' => session() -> get('userId'), 'id' => $id]) -> get();
         return view('houseinfo', ['res' => $houseInfo]);
-
     }
 
     public function createPage(){
