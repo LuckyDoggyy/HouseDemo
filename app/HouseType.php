@@ -11,4 +11,17 @@ class HouseType extends Model
         'room','hall','area','t_floor','build_year','addr','comm_name'
     ];
 
+    public static function addNewType($room, $hall, $area, $t_floor, $build_year, $addr, $comm_name){
+        return
+            \DB::table('house_types') -> insertGetId([
+            'room' => $room,
+            'hall' => $hall,
+            'area' => $area,
+            't_floor' => $t_floor,
+            'build_year' => $build_year,
+            'addr' => $addr,
+            'comm_name' => $comm_name
+            ]);
+    }
+
 }

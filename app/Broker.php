@@ -17,11 +17,8 @@ class Broker extends Model
     ];
 
     public function show($username){
-
         $broker = DB::table('brokers') -> where('username', $username) -> get();
-
         return $broker;
-
     }
 
     public function create($username, $password, $phone){

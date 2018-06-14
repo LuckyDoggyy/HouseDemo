@@ -43,7 +43,7 @@ class BrokerController extends Controller
                 session() -> put('username', $this->username);
                 session() -> put('password', $this->password);
                 session() -> put('userId', $validateBroker[0] -> id);
-                $this -> skipToPage('/houseList','Login successful, skip to homepage.');
+                $this -> skipToPage('/houseInfo','Login successful, skip to homepage.');
             }
         } else {
             if (empty($validateBroker[0])) {
@@ -63,7 +63,7 @@ class BrokerController extends Controller
     public function logout()
     {
         session()->flush();
-        return view('login');
+        return view('origin');
     }
 
     public function __destruct()

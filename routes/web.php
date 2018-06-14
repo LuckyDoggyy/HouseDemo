@@ -11,14 +11,18 @@
 |
 */
 
-Route::view('login', 'login');
+Route::view('login', 'origin');
 
-Route::view('register', 'register');
+Route::view('register', 'origin');
 
 Route::post('loginOrRegister', 'BrokerController@loginOrRegister');
 
 Route::get('logout', 'BrokerController@logout');
 
-Route::get('houseList','HouseController@houseList');
+//Route::get('house','HouseController@houseList');
 
 Route::resource('houseInfo', 'HouseController');
+
+Route::get('createPage','HouseController@createPage');
+
+Route::view('create', 'test', ['res' => 'skip successful']);

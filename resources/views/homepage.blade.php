@@ -67,4 +67,5 @@
         @endforeach
     </ul>
 </div>
+<a href="/createPage">add a new house</a>
 </body>
